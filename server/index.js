@@ -12,14 +12,13 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Resolve client/dist: from server/ we go up to root, then client/dist
-// On Render, start runs from root so cwd may be root; try both
+// Serve from server/public (Render: copied by build) or client/dist (local)
 const candidates = [
+  path.join(__dirname, 'public'),
   path.resolve(__dirname, '..', 'client', 'dist'),
   path.resolve(process.cwd(), 'client', 'dist'),
-  path.resolve(process.cwd(), '..', 'client', 'dist'),
 ];
-const clientDist = candidates.find((p) => fs.existsSync(p)) || candidates[0];
+const clientDist = candidates.find((p) => fs.existsSync(path.join(p, 'index.html'))) || candidates[0];
 
 const SYSTEM_PROMPT = `You are Pari's MBA Coach — a warm, knowledgeable, and encouraging personal assistant for Pari Sankhala, who is preparing for the GMAT and MBA college applications.
 
