@@ -81,6 +81,13 @@ Client runs at `http://localhost:5173`.
 
 The backend enables CORS for all origins. For production, consider restricting `Access-Control-Allow-Origin` to your Netlify domain.
 
+## Profile Photo
+
+The app shows Pari's photo from [LinkedIn](https://www.linkedin.com/in/pari-sankhala-443215120/) via unavatar.io. To use a local image instead:
+
+1. Add `pari-profile.jpg` to `client/public/`
+2. Or set `VITE_PARI_PROFILE_IMAGE` to your image URL in Netlify env vars
+
 ## Project Structure
 
 ```
