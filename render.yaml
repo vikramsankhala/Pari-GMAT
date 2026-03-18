@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: paris-mba-coach-api
+    name: paris-mba-coach
     runtime: node
-    rootDir: server
-    buildCommand: npm install
-    startCommand: npm start
+    rootDir: .
+    buildCommand: npm run build:render
+    startCommand: npm run start
     envVars:
       - key: ANTHROPIC_API_KEY
         sync: false

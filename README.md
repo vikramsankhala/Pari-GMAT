@@ -65,17 +65,16 @@ Visit `http://localhost:3001` — the React app loads at `/`, API at `/api/chat`
 
 ## Deployment
 
-### Backend → Render
+### Render (single service: app + API)
 
 1. Push your repo to GitHub.
 2. Go to [Render](https://render.com) → New → Web Service.
-3. Connect your repo and set:
-   - **Root Directory:** `server`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-4. Add **Environment Variable:**
-   - `ANTHROPIC_API_KEY` = your Anthropic API key
-5. Deploy. Note your service URL (e.g. `https://paris-mba-coach-api.onrender.com`).
+3. Connect your repo. The `render.yaml` is auto-detected, or set manually:
+   - **Root Directory:** `.` (project root)
+   - **Build Command:** `npm run build:render`
+   - **Start Command:** `npm run start`
+4. Add **Environment Variable:** `ANTHROPIC_API_KEY` = your Anthropic API key
+5. Deploy. The app and API are served from one URL (e.g. `https://paris-mba-coach.onrender.com`).
 
 ### Frontend → Netlify
 
