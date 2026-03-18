@@ -6,18 +6,22 @@ import { sendChat } from '../api/chat'
 
 const WELCOME_MESSAGES: Record<TabId, string> = {
   'gmat-coach':
-    "Hi Pari! I'm ready to coach you on GMAT. Want a practice question, concept explanation, or time management strategy?",
+    "Hi Pari! I'm your GMAT Coach. I can explain concepts (Quant, Verbal, DI), quiz you by section and difficulty, track weak areas, and share time tips (~2min 8sec/Quant). Remember: 10 min break, edit up to 3 answers/section, on-screen calculator, computer adaptive.",
   'college-apps':
-    "Hi Pari! I'm here to help with SOPs, essays, program selection, and application tips. What would you like to work on?",
+    "Hi Pari! I help with SOPs, essays, short answers, program suggestions (655–805), and LinkedIn/resume review. Reminder: some schools don't accept online GMAT; you need a valid passport to write the exam.",
   'financial-aid':
-    "Hi Pari! I can help with scholarships, appeal letters, and comparing funding options. What do you need?",
+    "Hi Pari! I can answer questions about scholarships, assistantships, and fellowships; help draft appeal letters; and compare funding across programs.",
   'study-planner':
-    "Hi Pari! Let's plan your study schedule. I can create weekly plans, set daily goals, and remind you about homework (like the mba.com mock test!).",
+    "Hi Pari! I'll generate weekly schedules, set daily goals, and remind you about homework — including the mba.com mock test before next class!",
   'problems-qa':
     "Hi Pari! This is your safe space to share problems you're facing — time pressure, weak areas, work-study balance, anxiety, or anything else. Tap a problem below or type your own. I'm here to help.",
   'mock-tests': "Hi Pari! Use the Mock Tests tab for practice questions and analysis.",
   'shortcuts': "Hi Pari! Use the Shortcuts tab for cheatsheets and topic analysis.",
   'suggested-colleges': "Hi Pari! Check the Suggested Colleges tab for schools matched to your profile.",
+  'past-papers': "Hi Pari! Use the Past Papers Analysis tab for question type patterns and insights tailored to you.",
+  'guided-practice': "Hi Pari! Use the Guided Practice tab for step-by-step problem solving with hints.",
+  'tracker': "Hi Pari! Use the Score Tracker tab to log scores, track problem areas, and get targeted practice.",
+  'video-resources': "Hi Pari! Use the Video Resources tab for 100 curated GMAT YouTube videos with availability checks.",
 }
 
 interface ChatPanelProps {
