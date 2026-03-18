@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -11,9 +12,14 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Serve React app (client/dist) when built
-const clientDist = path.resolve(__dirname, '..', 'client', 'dist');
-app.use(express.static(clientDist, { index: 'index.html' }));
+// Resolve client/dist: from server/ we go up to root, then client/dist
+// On Render, start runs from root so cwd may be root; try both
+const candidates = [
+  path.resolve(__dirname, '..', 'client', 'dist'),
+  path.resolve(process.cwd(), 'client', 'dist'),
+  path.resolve(process.cwd(), '..', 'client', 'dist'),
+];
+const clientDist = candidates.find((p) => fs.existsSync(p)) || candidates[0];
 
 const SYSTEM_PROMPT = `You are Pari's MBA Coach — a warm, knowledgeable, and encouraging personal assistant for Pari Sankhala, who is preparing for the GMAT and MBA college applications.
 
@@ -82,14 +88,22 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: "Pari's MBA Coach API" });
 });
 
-// SPA fallback: serve index.html for non-API routes
-app.get('*', (req, res, next) => {
-  if (req.path.startsWith('/api')) return next();
-  res.sendFile(path.join(clientDist, 'index.html'), (err) => {
-    if (err) res.status(404).send('App not built. Run: cd client && npm run build');
+// Serve static files and SPA fallback only if client/dist exists
+if (fs.existsSync(path.join(clientDist, 'index.html'))) {
+  app.use(express.static(clientDist, { index: 'index.html' }));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientDist, 'index.html'));
   });
-});
+} else {
+  app.get('/', (req, res) => {
+    res.status(503).send('App not built. Ensure build:render runs: npm run build:render');
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Pari's MBA Coach API running on port ${PORT}`);
+  if (!fs.existsSync(path.join(clientDist, 'index.html'))) {
+    console.warn('client/dist not found. Build client first: npm run build:render');
+  }
 });
