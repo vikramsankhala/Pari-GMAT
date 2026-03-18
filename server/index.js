@@ -42,7 +42,9 @@ app.post('/api/chat', async (req, res) => {
       return res.status(400).json({ error: 'messages array required' });
     }
 
-    const tabContext = tab ? `\n\nCurrent tab/context: ${tab}. Tailor your response to this section.` : '';
+    const tabContext = tab === 'problems-qa'
+      ? `\n\nCurrent tab: Problems & Q&A. Pari is sharing challenges she faces (time pressure, weak areas, work-study balance, anxiety, motivation, etc.). Be empathetic, validating, and solution-focused. Acknowledge her feelings, then offer practical, actionable advice. Keep responses supportive and encouraging.`
+      : tab ? `\n\nCurrent tab/context: ${tab}. Tailor your response to this section.` : '';
     const systemPrompt = SYSTEM_PROMPT + tabContext;
 
     const anthropic = new Anthropic({ apiKey });

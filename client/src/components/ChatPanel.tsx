@@ -13,6 +13,8 @@ const WELCOME_MESSAGES: Record<TabId, string> = {
     "Hi Pari! I can help with scholarships, appeal letters, and comparing funding options. What do you need?",
   'study-planner':
     "Hi Pari! Let's plan your study schedule. I can create weekly plans, set daily goals, and remind you about homework (like the mba.com mock test!).",
+  'problems-qa':
+    "Hi Pari! This is your safe space to share problems you're facing — time pressure, weak areas, work-study balance, anxiety, or anything else. Tap a problem below or type your own. I'm here to help.",
 }
 
 interface ChatPanelProps {
@@ -144,7 +146,7 @@ export default function ChatPanel({ activeTab }: ChatPanelProps) {
                 handleSend()
               }
             }}
-            placeholder="Ask Pari's MBA Coach anything..."
+            placeholder={activeTab === 'problems-qa' ? "Describe a problem you're facing..." : "Ask Pari's MBA Coach anything..."}
             rows={1}
             className="flex-1 resize-none rounded-xl border border-slate-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
           />

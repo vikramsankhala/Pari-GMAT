@@ -24,4 +24,14 @@ export const QUICK_ACTIONS: Record<TabId, { label: string; prompt: string }[]> =
     { label: 'Daily goals', prompt: 'What should my daily study goals look like?' },
     { label: 'Homework reminder', prompt: 'What homework do I have? Remind me about the mba.com mock test.' },
   ],
+  'problems-qa': [
+    { label: "Time pressure in exam", prompt: "I feel rushed during the GMAT. I can't finish sections on time. What should I do?" },
+    { label: "Quant is my weak area", prompt: "Quant is dragging my score down. How do I improve without neglecting Verbal and DI?" },
+    { label: "Work-study balance", prompt: "I work full-time in production. How do I balance GMAT prep with my job?" },
+    { label: "Mock scores not improving", prompt: "My mock test scores have plateaued. What am I doing wrong?" },
+    { label: "Exam anxiety", prompt: "I get anxious before and during the exam. How can I stay calm?" },
+    { label: "Data Insights struggle", prompt: "Data Insights feels overwhelming. Where do I start?" },
+    { label: "Motivation dip", prompt: "I'm losing motivation. How do I stay focused on my 695 target?" },
+    { label: "Describe my problem...", prompt: "I'm facing a problem with my GMAT prep or MBA journey. Can you help me think through it? (Describe your specific situation and I'll respond.)" },
+  ],
 }

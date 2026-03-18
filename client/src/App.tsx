@@ -9,6 +9,7 @@ import type { TabId } from './types'
 
 const TABS: { id: TabId; label: string }[] = [
   { id: 'gmat-coach', label: 'GMAT Coach' },
+  { id: 'problems-qa', label: 'Problems & Q&A' },
   { id: 'college-apps', label: 'College Apps' },
   { id: 'financial-aid', label: 'Financial Aid' },
   { id: 'study-planner', label: 'Study Planner' },

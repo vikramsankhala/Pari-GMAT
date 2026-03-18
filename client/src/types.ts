@@ -1,4 +1,4 @@
-export type TabId = 'gmat-coach' | 'college-apps' | 'financial-aid' | 'study-planner'
+export type TabId = 'gmat-coach' | 'college-apps' | 'financial-aid' | 'study-planner' | 'problems-qa'
 
 export interface Message {
   role: 'user' | 'assistant'
