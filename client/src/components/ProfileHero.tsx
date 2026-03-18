@@ -3,9 +3,10 @@ import { PARI_PROFILE } from '../data/pariProfile'
 
 export default function ProfileHero() {
   const [imgError, setImgError] = useState(false)
-  // Use VITE_PARI_PROFILE_IMAGE, or /pari-profile.jpg (add to client/public/), or unavatar for LinkedIn
+  // Priority: env var > local /pari-profile.jpg (in client/public/) > unavatar LinkedIn
   const profileImageUrl =
     import.meta.env.VITE_PARI_PROFILE_IMAGE ||
+    '/pari-profile.jpg' ||
     'https://unavatar.io/linkedin/pari-sankhala-443215120'
 
   return (
