@@ -1,0 +1,11 @@
+{
+  "name": "paris-mba-coach",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "npm run build && npm run start"
+  }
+}

@@ -1,12 +1,19 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve React app (client/dist) when built
+const clientDist = path.resolve(__dirname, '..', 'client', 'dist');
+app.use(express.static(clientDist, { index: 'index.html' }));
 
 const SYSTEM_PROMPT = `You are Pari's MBA Coach — a warm, knowledgeable, and encouraging personal assistant for Pari Sankhala, who is preparing for the GMAT and MBA college applications.
 
@@ -73,6 +80,14 @@ app.post('/api/chat', async (req, res) => {
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: "Pari's MBA Coach API" });
+});
+
+// SPA fallback: serve index.html for non-API routes
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  res.sendFile(path.join(clientDist, 'index.html'), (err) => {
+    if (err) res.status(404).send('App not built. Run: cd client && npm run build');
+  });
 });
 
 app.listen(PORT, () => {

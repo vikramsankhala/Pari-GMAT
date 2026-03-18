@@ -52,6 +52,17 @@ npm run dev
 
 Client runs at `http://localhost:5173`.
 
+### 4. Single-server mode (app at root URL)
+
+To serve the app and API from one URL (e.g. `http://localhost:3001/`):
+
+```bash
+npm run build    # Build client
+npm run start    # Start server (serves client + API)
+```
+
+Visit `http://localhost:3001` — the React app loads at `/`, API at `/api/chat`.
+
 ## Deployment
 
 ### Backend → Render
