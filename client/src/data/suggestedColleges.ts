@@ -1,0 +1,270 @@
+/**
+ * Suggested colleges for Pari Sankhala
+ * Based on: Creative/media background, 7+ yrs production, India-based, target GMAT 695-705,
+ * pivot to business strategy, SCMC Pune alum
+ */
+
+export interface SuggestedCollege {
+  id: string
+  name: string
+  country: string
+  city: string
+  fitReason: string
+  medianGmat: number
+  gmatRange: string
+  program: string
+  duration: string
+  tuitionUsd: number
+  tuitionNote: string
+  applicationDeadline: string
+  intake: string
+  ranking: string
+  strengths: string[]
+  placement: {
+    topSectors: string[]
+    avgSalary: string
+    topRecruiters: string[]
+  }
+  scholarships: string[]
+  campus: string
+  culture: string
+  indianStudents: string
+  mediaEntertainment: string
+  website: string
+  notes: string
+}
+
+export const SUGGESTED_COLLEGES: SuggestedCollege[] = [
+  {
+    id: 'insead',
+    name: 'INSEAD',
+    country: 'France / Singapore',
+    city: 'Fontainebleau, Singapore, Abu Dhabi',
+    fitReason: 'Strong media/creative pivot; consulting & media execs; dual campus suits India–Europe/Asia bridge.',
+    medianGmat: 710,
+    gmatRange: '650–760',
+    program: 'MBA',
+    duration: '10 months',
+    tuitionUsd: 99000,
+    tuitionNote: 'Approx. for 2025; varies by campus',
+    applicationDeadline: 'Rolling; R1 Sep, R2 Jan, R3 Mar',
+    intake: 'Jan, Sep',
+    ranking: 'FT Global #1–2, QS Top 5',
+    strengths: ['Consulting powerhouse', 'Media & entertainment electives', 'Diverse cohort (90+ nationalities)', '1-year intensive'],
+    placement: {
+      topSectors: ['Consulting 40%', 'Tech 25%', 'Finance 20%', 'Media/Consumer 15%'],
+      avgSalary: '€95K–110K',
+      topRecruiters: ['McKinsey', 'BCG', 'Bain', 'Amazon', 'Google', 'Netflix', 'Disney'],
+    },
+    scholarships: ['INSEAD Diversity', 'Women in Business', 'Need-based', 'Forté (women)'],
+    campus: 'Fontainebleau (France), Singapore, Abu Dhabi. Option to split between campuses.',
+    culture: 'International, fast-paced, collaborative. Strong alumni network in media & consulting.',
+    indianStudents: '~8–10% of cohort; strong India alumni network.',
+    mediaEntertainment: 'Media & entertainment club; case studies in streaming, production, OTT.',
+    website: 'https://www.insead.edu',
+    notes: 'Ideal for Pari: creative-industry pivot, global exposure, consulting/media roles.',
+  },
+  {
+    id: 'lbs',
+    name: 'London Business School',
+    country: 'UK',
+    city: 'London',
+    fitReason: 'Media hub; strong in creative industries, consulting, and leadership development.',
+    medianGmat: 700,
+    gmatRange: '640–760',
+    program: 'MBA',
+    duration: '15–21 months (flexible)',
+    tuitionUsd: 115000,
+    tuitionNote: 'Full program',
+    applicationDeadline: 'R1 Sep, R2 Jan, R3 Mar, R4 Apr',
+    intake: 'Aug, Jan',
+    ranking: 'FT Global Top 5, QS Top 10',
+    strengths: ['London media/creative ecosystem', 'Flexible duration', 'Media & entertainment club', 'Strong finance & consulting'],
+    placement: {
+      topSectors: ['Consulting 35%', 'Finance 30%', 'Tech 20%', 'Media/Retail 15%'],
+      avgSalary: '£85K–95K',
+      topRecruiters: ['McKinsey', 'Goldman Sachs', 'Amazon', 'BBC', 'Sky', 'Disney'],
+    },
+    scholarships: ['Forté', 'LBS Fellowship', 'India scholarships', 'Need-based'],
+    campus: 'Central London; access to media, tech, and finance firms.',
+    culture: 'Collaborative, diverse; strong emphasis on leadership and entrepreneurship.',
+    indianStudents: '~12% of cohort; active India club.',
+    mediaEntertainment: 'Media & Entertainment Club; London film/TV/streaming ecosystem.',
+    website: 'https://www.london.edu',
+    notes: 'London ideal for media pivot; BBC, Sky, studios nearby.',
+  },
+  {
+    id: 'oxford',
+    name: 'Oxford Said',
+    country: 'UK',
+    city: 'Oxford',
+    fitReason: 'Small cohort; strong in social impact, entrepreneurship; creative-industry pivots welcome.',
+    medianGmat: 690,
+    gmatRange: '620–750',
+    program: 'MBA',
+    duration: '1 year',
+    tuitionUsd: 72000,
+    tuitionNote: 'Approx. 2025',
+    applicationDeadline: 'R1 Sep, R2 Jan, R3 Mar',
+    intake: 'Sep',
+    ranking: 'FT Global Top 15',
+    strengths: ['Oxford brand', 'Entrepreneurship & innovation', 'Small cohort (~350)', 'Social impact focus'],
+    placement: {
+      topSectors: ['Consulting 30%', 'Tech 25%', 'Finance 20%', 'Social/Impact 25%'],
+      avgSalary: '£75K–85K',
+      topRecruiters: ['McKinsey', 'Google', 'Amazon', 'Bain', 'Startups'],
+    },
+    scholarships: ['Said Foundation', 'Forté', 'Oxford India', 'Need-based'],
+    campus: 'Historic Oxford; collegiate system.',
+    culture: 'Intellectual, entrepreneurial; strong startup ecosystem.',
+    indianStudents: '~10%; growing India representation.',
+    mediaEntertainment: 'Creative industries interest; Oxford Media Society; film/TV connections.',
+    website: 'https://www.sbs.oxford.edu',
+    notes: 'Good fit for creative pivot; smaller, intimate program.',
+  },
+  {
+    id: 'isb',
+    name: 'ISB Hyderabad',
+    country: 'India',
+    city: 'Hyderabad',
+    fitReason: '1-year MBA in India; strong media/tech placement; SCMC alum network; no career break needed.',
+    medianGmat: 710,
+    gmatRange: '680–750',
+    program: 'PGP (MBA)',
+    duration: '1 year',
+    tuitionUsd: 38000,
+    tuitionNote: 'Approx. INR 35L',
+    applicationDeadline: 'R1 Sep, R2 Dec, R3 Feb',
+    intake: 'Apr',
+    ranking: 'FT Global Top 30, India #1 (1-year)',
+    strengths: ['India placement leader', '1-year format', 'Media & tech focus', 'Strong alumni in entertainment'],
+    placement: {
+      topSectors: ['Consulting 30%', 'Tech 35%', 'Finance 15%', 'Media/Consumer 20%'],
+      avgSalary: 'INR 32–36L',
+      topRecruiters: ['McKinsey', 'BCG', 'Amazon', 'Google', 'Disney+', 'Netflix', 'Jio', 'Zee'],
+    },
+    scholarships: ['Need-based', 'Merit', 'Women', 'Diversity'],
+    campus: 'Hyderabad; modern, residential.',
+    culture: 'Intense, collaborative; strong India corporate network.',
+    indianStudents: '~95% Indian; some international.',
+    mediaEntertainment: 'Media & entertainment placements; OTT, production houses, studios recruit.',
+    website: 'https://www.isb.edu',
+    notes: 'Best India option for Pari; media/tech overlap; SCMC connection.',
+  },
+  {
+    id: 'spjain',
+    name: 'SP Jain Global',
+    country: 'UAE / Australia',
+    city: 'Dubai, Sydney, Mumbai',
+    fitReason: 'Multi-city; emerging markets; media/consumer focus; diverse cohort.',
+    medianGmat: 680,
+    gmatRange: '620–740',
+    program: 'GMBA',
+    duration: '1 year',
+    tuitionUsd: 42000,
+    tuitionNote: 'Approx.',
+    applicationDeadline: 'Rolling',
+    intake: 'Jan, Sep',
+    ranking: 'Economist Top 100, strong in Asia',
+    strengths: ['Dubai–Sydney–Mumbai exposure', 'Emerging markets', 'Media & consumer focus', 'Affordable'],
+    placement: {
+      topSectors: ['Consulting 25%', 'Tech 30%', 'Finance 20%', 'Media/Retail 25%'],
+      avgSalary: 'INR 18–25L / AED 120K+',
+      topRecruiters: ['Deloitte', 'Accenture', 'Amazon', 'Media firms', 'Startups'],
+    },
+    scholarships: ['Merit', 'Women', 'Need-based'],
+    campus: 'Dubai, Sydney, Mumbai (rotating).',
+    culture: 'Entrepreneurial; strong in consumer & media sectors.',
+    indianStudents: '~70% Indian; global exposure.',
+    mediaEntertainment: 'Media & entertainment track; Dubai/Sydney media hubs.',
+    website: 'https://www.spjain.org',
+    notes: 'Good for Pari: multi-city, media focus, cost-effective.',
+  },
+  {
+    id: 'ntu',
+    name: 'NTU Nanyang',
+    country: 'Singapore',
+    city: 'Singapore',
+    fitReason: 'Asia hub; tech & media; strong for India–Singapore bridge; 1-year.',
+    medianGmat: 680,
+    gmatRange: '620–740',
+    program: 'MBA',
+    duration: '1 year',
+    tuitionUsd: 65000,
+    tuitionNote: 'Approx. SGD 85K',
+    applicationDeadline: 'R1 Nov, R2 Jan, R3 Mar',
+    intake: 'Jul',
+    ranking: 'FT/QS Top 30 in Asia',
+    strengths: ['Singapore media/tech hub', '1-year', 'Asia focus', 'Strong tech placement'],
+    placement: {
+      topSectors: ['Tech 35%', 'Consulting 25%', 'Finance 20%', 'Media/Consumer 20%'],
+      avgSalary: 'SGD 100K+',
+      topRecruiters: ['Google', 'Amazon', 'Meta', 'Netflix', 'Consulting firms'],
+    },
+    scholarships: ['Nanyang Fellows', 'Women', 'Merit', 'Need-based'],
+    campus: 'Singapore; modern, tech-focused.',
+    culture: 'Innovation-driven; strong tech & media ecosystem.',
+    indianStudents: '~15%; growing.',
+    mediaEntertainment: 'Singapore media hub; streaming, production, tech media.',
+    website: 'https://www.ntu.edu.sg',
+    notes: 'Asia pivot; media/tech overlap; Singapore base.',
+  },
+  {
+    id: 'rotman',
+    name: 'Rotman (Toronto)',
+    country: 'Canada',
+    city: 'Toronto',
+    fitReason: 'Toronto media/film hub; PR pathway; strong finance; diverse cohort.',
+    medianGmat: 670,
+    gmatRange: '600–740',
+    program: 'MBA',
+    duration: '2 years (1-year option)',
+    tuitionUsd: 75000,
+    tuitionNote: 'Full program CAD',
+    applicationDeadline: 'R1 Oct, R2 Jan, R3 Mar',
+    intake: 'Sep',
+    ranking: 'FT/QS Top 50; Canada #1',
+    strengths: ['Toronto film/media hub', 'PR pathway', 'Finance strength', 'Diverse'],
+    placement: {
+      topSectors: ['Finance 35%', 'Consulting 25%', 'Tech 20%', 'Media 20%'],
+      avgSalary: 'CAD 95K+',
+      topRecruiters: ['Banks', 'Consulting', 'Bell Media', 'CBC', 'Tech firms'],
+    },
+    scholarships: ['Forté', 'Merit', 'International', 'Need-based'],
+    campus: 'Downtown Toronto; media & finance hub.',
+    culture: 'Collaborative; strong finance & media presence.',
+    indianStudents: '~15%; Canada PR pathway.',
+    mediaEntertainment: 'Toronto film/TV industry; CBC, Bell Media, studios.',
+    website: 'https://www.rotman.utoronto.ca',
+    notes: 'Canada PR option; Toronto media ecosystem.',
+  },
+  {
+    id: 'iim-abc',
+    name: 'IIM A/B/C (EPGP)',
+    country: 'India',
+    city: 'Ahmedabad / Kolkata / Bangalore',
+    fitReason: 'Executive/EPGP for experienced professionals; IIM brand; India leadership.',
+    medianGmat: 730,
+    gmatRange: '700–780',
+    program: 'EPGP (1-year)',
+    duration: '1 year',
+    tuitionUsd: 45000,
+    tuitionNote: 'Approx. INR 40L+',
+    applicationDeadline: 'Varies; typically Jan–Mar',
+    intake: 'Apr',
+    ranking: 'India Top 3',
+    strengths: ['IIM brand', 'India leadership', 'Strong alumni', 'Executive cohort'],
+    placement: {
+      topSectors: ['Consulting 30%', 'Tech 25%', 'Finance 20%', 'General Management 25%'],
+      avgSalary: 'INR 35–45L',
+      topRecruiters: ['McKinsey', 'BCG', 'Tata', 'Reliance', 'Tech giants'],
+    },
+    scholarships: ['Limited merit-based', 'Need-based (limited)'],
+    campus: 'Ahmedabad, Kolkata, Bangalore; residential.',
+    culture: 'Rigorous; India corporate leadership focus.',
+    indianStudents: '~100% Indian.',
+    mediaEntertainment: 'Media/entertainment placements growing; consulting generalist.',
+    website: 'https://www.iima.ac.in',
+    notes: 'Stretch for 695–705; aim 710+ for competitive edge.',
+  },
+]

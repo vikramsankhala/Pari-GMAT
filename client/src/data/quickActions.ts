@@ -24,6 +24,9 @@ export const QUICK_ACTIONS: Record<TabId, { label: string; prompt: string }[]> =
     { label: 'Daily goals', prompt: 'What should my daily study goals look like?' },
     { label: 'Homework reminder', prompt: 'What homework do I have? Remind me about the mba.com mock test.' },
   ],
+  'mock-tests': [],
+  'shortcuts': [],
+  'suggested-colleges': [],
   'problems-qa': [
     { label: "Time pressure in exam", prompt: "I feel rushed during the GMAT. I can't finish sections on time. What should I do?" },
     { label: "Quant is my weak area", prompt: "Quant is dragging my score down. How do I improve without neglecting Verbal and DI?" },

@@ -15,6 +15,9 @@ const WELCOME_MESSAGES: Record<TabId, string> = {
     "Hi Pari! Let's plan your study schedule. I can create weekly plans, set daily goals, and remind you about homework (like the mba.com mock test!).",
   'problems-qa':
     "Hi Pari! This is your safe space to share problems you're facing — time pressure, weak areas, work-study balance, anxiety, or anything else. Tap a problem below or type your own. I'm here to help.",
+  'mock-tests': "Hi Pari! Use the Mock Tests tab for practice questions and analysis.",
+  'shortcuts': "Hi Pari! Use the Shortcuts tab for cheatsheets and topic analysis.",
+  'suggested-colleges': "Hi Pari! Check the Suggested Colleges tab for schools matched to your profile.",
 }
 
 interface ChatPanelProps {
